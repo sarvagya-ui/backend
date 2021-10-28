@@ -1,1 +1,24 @@
-<p>content-layout works!</p>
+<div class="page-wrapper">
+    <!--Header here-->
+    <app-header></app-header>
+
+    <div class="page-body-wrapper">
+        <div class="page-sidebar">
+           <!-- Sidebar here -->
+           <app-sidebar></app-sidebar>
+
+        </div>
+        <div class="page-body">
+           <!-- Breadcrumb here-->
+           <app-breadcrumb></app-breadcrumb>
+
+            <!--Content page here-->
+            <router-outlet></router-outlet>
+            
+        </div>
+        <footer class="footer">
+            <!--Footer here-->
+            <app-footer></app-footer>
+        </footer>
+    </div>
+</div>

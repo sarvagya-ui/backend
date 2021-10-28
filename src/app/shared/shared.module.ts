@@ -7,12 +7,25 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ContentLayoutComponent } from './layout/content-layout/content-layout.component';
 
+import { RouterModule } from '@angular/router';
+
 
 
 @NgModule({
-  declarations: [BreadcrumbComponent, FeathericonComponent, FooterComponent, HeaderComponent, SidebarComponent, ContentLayoutComponent],
+  declarations: [
+    BreadcrumbComponent,
+    FeathericonComponent,
+    FooterComponent,
+    HeaderComponent,
+    SidebarComponent,
+    ContentLayoutComponent
+  ],
   imports: [
-    CommonModule
+    CommonModule,
+    RouterModule
+  ],
+  exports:[
+    FeathericonComponent /* We have created feature module then created one component , to use this component you need to export it */
   ]
 })
 export class SharedModule { }

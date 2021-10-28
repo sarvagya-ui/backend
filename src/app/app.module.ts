@@ -8,6 +8,8 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {HttpClientModule} from '@angular/common/http';
 import {SharedModule} from '../app/shared/shared.module';
 import {AuthModule} from './components/auth/auth.module';
+import {ToastrModule} from 'ngx-toastr';
+
 
 
 @NgModule({
@@ -17,7 +19,11 @@ import {AuthModule} from './components/auth/auth.module';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule,
+    SharedModule,
+    AuthModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]
