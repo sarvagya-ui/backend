@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import * as feather from 'feather-icons';
 @Component({
-  selector: 'app-feathericon',
+  selector: 'app-feather-icon',
   templateUrl: './feathericon.component.html',
   styleUrls: ['./feathericon.component.scss']
 })

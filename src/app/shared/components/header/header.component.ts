@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { NavService } from '../../services/nav.service';
+import {FeathericonComponent} from '../feathericon/feathericon.component';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  open: boolean = false;
+  openNav: boolean = false;
+  constructor(private _navService: NavService) { }
 
   ngOnInit(): void {
+
   }
 
+  collapseSidebar() {
+    this.open = !this.open;
+    this._navService.collaspeSidebar = !this._navService.collaspeSidebar;
+  }
+
+  openMobileNav(){
+    this.openNav = !this.openNav;
+  }
 }
