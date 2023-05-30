@@ -1,0 +1,13 @@
+.page-main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.main-header-left {
+  order: 1;
+}
+
+.main-header-right {
+  order: 2;
+}
