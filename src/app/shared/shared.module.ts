@@ -6,6 +6,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ContentLayoutComponent } from './layout/content-layout/content-layout.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
+import { PrimeModule } from 'src/app/prime.module';
 
 @NgModule({
   declarations: [
@@ -16,6 +17,6 @@ import { AppRoutingModule } from 'src/app/app-routing.module';
     ContentLayoutComponent,
   ],
 
-  imports: [CommonModule, AppRoutingModule],
+  imports: [CommonModule, AppRoutingModule, PrimeModule],
 })
 export class SharedModule {}

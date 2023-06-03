@@ -1,11 +1,14 @@
 <div class="page-main-header">
-  <div class="main-header-left">
-    <i class="pi pi-align-left" style="font-size: 2rem"></i>
+  <div class="main-header-sub-left">
+    <i
+      class="pi pi-align-left"
+      style="font-size: 2rem"
+      (click)="openSideBar()"
+    ></i>
   </div>
-  <div class="main-header-right">
-    2
-    <div class="card flex justify-content-center">
-      <!-- <p-menu [model]="items"></p-menu> -->
-    </div>
+  <div class="main-header-sub-right" (click)="menu.toggle($event)">
+    <i class="pi pi-user" style="font-size: 2rem"></i>
   </div>
 </div>
+
+<p-menu #menu [model]="items" [popup]="true"></p-menu>
