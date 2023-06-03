@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { AuthService } from 'src/app/auth/auth.service';
+import { AuthService } from 'src/app/components/auth/auth.service';
+
 import { DataService } from 'src/app/shared/services/data.service';
 import { Global } from 'src/app/shared/services/global';
 import { MustMatchValidator } from 'src/app/validations/validations.validator';

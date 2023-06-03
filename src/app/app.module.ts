@@ -8,9 +8,9 @@ import { AppComponent } from './app.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { PrimeModule } from 'src/app/prime.module';
-import { AuthModule } from 'src/app/auth/auth.module';
 import { HeaderInterceptors } from 'src/app/interceptors/header.interceptors';
 import { ResponseInterceptors } from 'src/app/interceptors/response.interceptors';
+import { AuthModule } from 'src/app/components/auth/auth.module';
 
 @NgModule({
   declarations: [AppComponent],

@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { AuthGuard } from 'src/app/auth/auth.guard';
-import { LoginComponent } from 'src/app/auth/login/login.component';
+import { AuthGuard } from 'src/app/components/auth/auth.guard';
 import { ContentLayoutComponent } from 'src/app/shared/layout/content-layout/content-layout.component';
 import { contentRoute } from 'src/app/shared/routes/content-routes';
 
