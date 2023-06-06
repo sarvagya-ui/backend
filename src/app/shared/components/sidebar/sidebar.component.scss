@@ -1,0 +1,10 @@
+//remove border
+.main-side-menu ::ng-deep .p-tieredmenu {
+  border: none;
+}
+
+//margin-top
+.main-side-menu {
+  margin-top: 10%;
+  margin-left: 4%;
+}

@@ -35,7 +35,7 @@ export class NumericFiledValidator {
 
 //Allow char and space only
 export class OnlyCharFiledValidator {
-  static validOnlyCharFiled(fc: FormControl) {
+  static validOnlyCharFiled(fc: any) {
     if (fc.value != undefined && fc.value != '') {
       const regex = /^[a-zA-Z ]+$/;
 
@@ -69,7 +69,8 @@ export class EmailValidator {
 //Not Allow whitespace only
 //user will not be able to proceed futher by giving space.
 export class NoWhiteSpaceValidator {
-  static noWhiteSpaceValidator(fc: FormControl) {
+  //static noWhiteSpaceValidator(fc: FormControl) , if you want it to be strick type
+  static noWhiteSpaceValidator(fc: any) {
     if (fc.value != undefined && fc.value != '' && fc.value != null) {
       const isWhiteSpace = fc.value.toString().trim().length === 0;
       if (!isWhiteSpace) {

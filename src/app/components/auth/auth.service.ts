@@ -33,7 +33,8 @@ export class AuthService {
       this.loggedIn.next(true);
       this.currentUserSubject.next(objUserDetails);
       localStorage.setItem('userDetails', JSON.stringify(objUserDetails));
-      this.router.navigate(['dashboard/default']);
+      //this.router.navigate(['dashboard/default']);
+      this.router.navigate(['master/size']);
     }
   }
 

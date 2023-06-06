@@ -4,10 +4,26 @@ import { CommonModule } from '@angular/common';
 import { ButtonModule } from 'primeng/button';
 import { MenuModule } from 'primeng/menu';
 import { SidebarModule } from 'primeng/sidebar';
+import { TieredMenuModule } from 'primeng/tieredmenu';
+import { TabViewModule } from 'primeng/tabview';
+import { CardModule } from 'primeng/card';
+import { InputTextModule } from 'primeng/inputtext';
+import { TableModule } from 'primeng/table';
+import { PaginatorModule } from 'primeng/paginator';
 
 @NgModule({
   declarations: [],
   imports: [CommonModule],
-  exports: [ButtonModule, MenuModule, SidebarModule],
+  exports: [
+    ButtonModule,
+    MenuModule,
+    SidebarModule,
+    TieredMenuModule,
+    TabViewModule,
+    CardModule,
+    InputTextModule,
+    TableModule,
+    PaginatorModule
+  ],
 })
-export class PrimeModule {}
+export class PrimeModule { }

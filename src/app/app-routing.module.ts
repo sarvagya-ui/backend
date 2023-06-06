@@ -9,7 +9,7 @@ const routes: Routes = [
     path: '',
     component: ContentLayoutComponent,
     children: contentRoute,
-    canActivate: [AuthGuard],
+    //canActivate: [AuthGuard],
   },
 ];
 

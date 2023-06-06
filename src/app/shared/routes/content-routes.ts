@@ -13,4 +13,11 @@ export const contentRoute: Routes = [
     loadChildren: () =>
       import('../../components/user/user.module').then((m) => m.UserModule),
   },
+  {
+    path: 'master',
+    loadChildren: () =>
+      import('../../components/master/master.module').then(
+        (m) => m.MasterModule
+      ),
+  },
 ];
