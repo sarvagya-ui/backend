@@ -1,1 +1,113 @@
-<p>color works!</p>
+<div class="card-size">
+  <p-card header="Color">
+    <p class="m-0">
+      <p-tabView [(activeIndex)]="activeIndex">
+        <!--Add Start-->
+        <p-tabPanel header="Add">
+          <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
+            <div>
+              <div class="form-input-custom">
+                <label for="validationCustom0"> Name </label>
+                <input type="text" pInputText formControlName="name" />
+              </div>
+              <div *ngIf="f['name'].touched && !f['name'].valid">
+                <span
+                  style="color: #dc3545 !important"
+                  *ngIf="f['name'].hasError('required')"
+                >
+                  {{ validationMessages.name.required }}
+                </span>
+                <div *ngIf="formErrors.name">{{ formErrors.name }}</div>
+              </div>
+
+              <div class="form-input-custom">
+                <label for="validationCustom0"> Code </label>
+                <input type="text" pInputText formControlName="code" />
+              </div>
+              <div *ngIf="f['code'].touched && !f['code'].valid">
+                <span
+                  style="color: #dc3545 !important"
+                  *ngIf="f['code'].hasError('required')"
+                >
+                  {{ validationMessages.code.required }}
+                </span>
+                <div *ngIf="formErrors.code">{{ formErrors.code }}</div>
+              </div>
+            </div>
+            <div>
+              <p-button
+                label="Cancel"
+                styleClass="p-button-danger"
+                (click)="cancelForm()"
+              ></p-button>
+              <p-button
+                [label]="buttonText"
+                styleClass="p-button-secondary"
+                type="submit"
+                [disabled]="!addForm.valid"
+              ></p-button>
+            </div>
+          </form>
+        </p-tabPanel>
+        <p-tabPanel header="View">
+          <!-- View Start-->
+          <div>
+            <div>
+              <div>
+                <div>
+                  <div>
+                    <div>
+                      <p-table
+                        [paginator]="true"
+                        [rows]="5"
+                        [value]="objRows"
+                        [tableStyle]="{ 'min-width': '50rem' }"
+                      >
+                        <ng-template pTemplate="header">
+                          <tr>
+                            <th>Name</th>
+                            <th>CreatedOn</th>
+                            <th>Action</th>
+                          </tr>
+                        </ng-template>
+                        <ng-template pTemplate="body" let-objRows>
+                          <tr>
+                            <td>{{ objRows.name }}</td>
+                            <td>{{ objRows.createdOn }}</td>
+                            <td>
+                              <span class="margin-left-2per"
+                                ><p-button
+                                  icon="pi pi-file-edit"
+                                  (click)="edit(objRows.id)"
+                                ></p-button
+                              ></span>
+                              <span class="margin-left-2per"
+                                ><p-button
+                                  icon="pi pi-trash"
+                                  (click)="delete(objRows.id)"
+                                ></p-button
+                              ></span>
+                            </td>
+                          </tr>
+                        </ng-template>
+                        <ng-template pTemplate="footer">
+                          <div class="footer-table">
+                            <div>
+                              Total Records :
+                              <strong>{{ totalRecords }}</strong>
+                            </div>
+                          </div>
+                        </ng-template>
+                      </p-table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--View End-->
+        </p-tabPanel>
+      </p-tabView>
+    </p>
+  </p-card>
+</div>

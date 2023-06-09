@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root',
 })
 export class DataService {
-  constructor(private _httpClient: HttpClient) {}
+  constructor(private _httpClient: HttpClient) { }
 
   get(url: string): Observable<any> {
     return this._httpClient.get(url);
@@ -20,7 +20,6 @@ export class DataService {
   postImage(url: string, model: any): Observable<any> {
     //this key from header will be removed in headerInterceptor
     let httpHeaders = new HttpHeaders().set('isImage', '');
-
     return this._httpClient.post(url, model, {
       headers: httpHeaders,
     });

@@ -42,22 +42,15 @@ export class SizeComponent implements OnInit {
   constructor(private _fb: FormBuilder, private _dataService: DataService) { }
 
   ngOnInit(): void {
-    this.setTabItem();
+    this.activeIndex = 1;
     this.setFormState();
     this.getData();
   }
 
-  setTabItem() {
-    this.items = [
-      { label: 'Home', icon: 'pi pi-fw pi-home' },
-      { label: 'Calendar', icon: 'pi pi-fw pi-calendar' },
-      { label: 'Edit', icon: 'pi pi-fw pi-pencil' },
-      { label: 'Documentation', icon: 'pi pi-fw pi-file' },
-      { label: 'Settings', icon: 'pi pi-fw pi-cog' },
-    ];
-  }
 
   setFormState() {
+    this.dbops = DBOperation.create;
+    this.buttonText = "Submit";
     this.addForm = this._fb.group({
       id: [0],
       name: ['', Validators.compose([
@@ -103,7 +96,7 @@ export class SizeComponent implements OnInit {
     return this.addForm.controls;
   }
 
-  onSumbit() {
+  onSubmit() {
     switch (this.dbops) {
       case DBOperation.create:
         this._dataService.post(Global.BASE_API_PATH + "SizeMaster/Save/", this.addForm.value).subscribe(res => {

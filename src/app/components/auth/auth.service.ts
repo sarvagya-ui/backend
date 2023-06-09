@@ -6,7 +6,7 @@ import { BehaviorSubject } from 'rxjs';
   providedIn: 'root',
 })
 export class AuthService {
-  constructor(private router: Router) {}
+  constructor(private router: Router) { }
 
   private currentUserSubject = new BehaviorSubject<any>(null); // For token use
 
@@ -34,7 +34,7 @@ export class AuthService {
       this.currentUserSubject.next(objUserDetails);
       localStorage.setItem('userDetails', JSON.stringify(objUserDetails));
       //this.router.navigate(['dashboard/default']);
-      this.router.navigate(['master/size']);
+      this.router.navigate(['masters/size']);
     }
   }
 

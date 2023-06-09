@@ -1,3 +1,11 @@
 <div class="main-side-menu">
+  <div class="user-details-sidebar">
+    <div class="user-details-image">
+      <img [src]="imagePath" alt="user">
+    </div>
+    <div class="user-details-name">
+      {{fullName | titlecase}}
+    </div>
+  </div>
   <p-tieredMenu [model]="items"></p-tieredMenu>
 </div>

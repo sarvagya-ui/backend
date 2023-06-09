@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/api';
+import { Global } from 'src/app/shared/services/global';
 import { NavService } from 'src/app/shared/services/nav.service';
 
 @Component({
@@ -11,9 +12,16 @@ export class HeaderComponent implements OnInit {
   items!: MenuItem[];
   open: boolean = true;
   sidebarVisible: boolean = false;
-  constructor(public navService: NavService) {}
+  imagePath = "assets/images/user.png";
+
+  constructor(public navService: NavService) { }
 
   ngOnInit(): void {
+    this.headerPopUp();
+    this.fetchUserDetails();
+  }
+
+  headerPopUp() {
     this.items = [
       {
         label: 'Setting',
@@ -26,12 +34,11 @@ export class HeaderComponent implements OnInit {
     ];
   }
 
-  openSideBar() {
-    this.open = !this.open;
-    console.log(this.open);
-
-    //this.navService.sidebarVisible = !this.navService.sidebarVisible;
+  fetchUserDetails() {
+    let userDetails = JSON.parse(localStorage.getItem("userDetails") as string);
+    this.imagePath = (userDetails.imagePath == "" || userDetails.imagePath == null) ? "assets/images/user.png" : Global.BASE_USERS_IMAGES_PATH + userDetails.imagePath;
   }
 
-  logout() {}
+
+  logout() { }
 }

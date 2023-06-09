@@ -1,13 +1,9 @@
 <div class="page-main-header">
   <div class="main-header-sub-left">
-    <i
-      class="pi pi-align-left"
-      style="font-size: 2rem"
-      (click)="openSideBar()"
-    ></i>
+    <i class="pi pi-align-left" style="font-size: 2rem"></i>
   </div>
   <div class="main-header-sub-right" (click)="menu.toggle($event)">
-    <i class="pi pi-user" style="font-size: 2rem"></i>
+    <img [src]="imagePath" alt="user">
   </div>
 </div>
 

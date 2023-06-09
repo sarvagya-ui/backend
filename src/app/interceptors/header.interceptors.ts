@@ -12,7 +12,7 @@ import { AuthService } from 'src/app/components/auth/auth.service';
   providedIn: 'root',
 })
 export class HeaderInterceptors implements HttpInterceptor {
-  constructor(private _authService: AuthService) {}
+  constructor(private _authService: AuthService) { }
   intercept(
     req: HttpRequest<any>,
     next: HttpHandler

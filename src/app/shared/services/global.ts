@@ -17,5 +17,5 @@ export class Global {
 
   public static BASE_IMAGES_PATH = 'http://sahosoftweb.com/images/';
 
-  public static BASE_USERS_IMAGES_PATH = 'http://sahosoftweb.com/users';
+  public static BASE_USERS_IMAGES_PATH = 'http://sahosoftweb.com/users/';
 }

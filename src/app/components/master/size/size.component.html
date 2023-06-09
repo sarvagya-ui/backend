@@ -4,7 +4,7 @@
       <p-tabView [(activeIndex)]="activeIndex">
         <!--Add Start-->
         <p-tabPanel header="Add">
-          <form [formGroup]="addForm" (ngSubmit)="onSumbit()">
+          <form [formGroup]="addForm" (ngSubmit)="onSubmit()">
             <div>
               <div class="form-input-custom">
                 <label for="validationCustom0"> Name </label>
@@ -95,7 +95,5 @@
         </p-tabPanel>
       </p-tabView>
     </p>
-
-    <button (click)="activeIndex = 0">Header 1</button>
   </p-card>
 </div>
