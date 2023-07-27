@@ -7,6 +7,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ContentLayoutComponent } from './layout/content-layout/content-layout.component';
 import { AppRoutingModule } from 'src/app/app-routing.module';
 import { PrimeModule } from 'src/app/prime.module';
+import { TransPipe } from './pipe/trans.pipe';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { PrimeModule } from 'src/app/prime.module';
     HeaderComponent,
     SidebarComponent,
     ContentLayoutComponent,
+    TransPipe,
   ],
 
   imports: [CommonModule, AppRoutingModule, PrimeModule],

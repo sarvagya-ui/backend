@@ -1,0 +1,49 @@
+<div class="card-size">
+  <div class="create-user-nav">
+    <p-button icon="pi pi-file-edit" label="Create User" (click)="navCreateUser()"></p-button>
+  </div>
+  <p-card header="User List">
+    <div>
+      <!-- View Start-->
+      <div>
+        <p-table [paginator]="true" [rows]="5" [value]="objRows" [tableStyle]="{ 'min-width': '50rem' }">
+          <ng-template pTemplate="header">
+            <tr>
+              <th>FirstName</th>
+              <th>LastName</th>
+              <th>Email</th>
+              <th>UserType</th>
+              <th>CreatedOn</th>
+              <th>Actions</th>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-objRows>
+            <tr>
+              <td>{{ objRows.firstName }}</td>
+              <td>{{ objRows.lastName }}</td>
+              <td>{{ objRows.email }}</td>
+              <td>{{ objRows.userType}}</td>
+              <td>{{ objRows.createdBy }}</td>
+              <td>
+                <span class="margin-left-2per"><p-button icon="pi pi-file-edit"
+                    (click)="edit(objRows.id)"></p-button></span>
+                <span class="margin-left-2per"><p-button icon="pi pi-trash"
+                    (click)="delete(objRows.id)"></p-button></span>
+              </td>
+            </tr>
+          </ng-template>
+          <ng-template pTemplate="footer">
+            <div class="footer-table">
+              <div>
+                Total Records :
+                <strong>{{ totalRecords }}</strong>
+              </div>
+            </div>
+          </ng-template>
+        </p-table>
+      </div>
+
+
+      <!--View End-->
+    </div>
+  </p-card>

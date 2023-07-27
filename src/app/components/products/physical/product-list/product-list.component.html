@@ -1,0 +1,42 @@
+<div class="btn-div">
+  <div>
+    <p-button label="ADD PRODUCT"></p-button>
+  </div>
+</div>
+<p-table [paginator]="true" [rows]="5" [value]="objRows" [tableStyle]="{ 'min-width': '50rem' }">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>Name</th>
+      <th>code</th>
+      <th>Title</th>
+      <th>Price</th>
+      <th>Sale Price</th>
+      <th>Quantity</th>
+      <th>Created Date</th>
+      <th>Action</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-objRows>
+    <tr>
+      <td>{{ objRows.name }}</td>
+      <td>{{ objRows.code }}</td>
+      <td>{{ objRows.title }}</td>
+      <td>{{ objRows.price }}</td>
+      <td>{{ objRows.salePrice }}</td>
+      <td>{{ objRows.quantity }}</td>
+      <td>{{ objRows.createdOn }}</td>
+      <td>
+        <span class="margin-left-2per"><p-button icon="pi pi-file-edit" (click)="edit(objRows.id)"></p-button></span>
+        <span class="margin-left-2per"><p-button icon="pi pi-trash" (click)="delete(objRows.id)"></p-button></span>
+      </td>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="footer">
+    <div class="footer-table">
+      <div>
+        Total Records :
+        <strong>{{ totalRecords }}</strong>
+      </div>
+    </div>
+  </ng-template>
+</p-table>

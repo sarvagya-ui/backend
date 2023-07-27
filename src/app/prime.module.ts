@@ -10,6 +10,7 @@ import { CardModule } from 'primeng/card';
 import { InputTextModule } from 'primeng/inputtext';
 import { TableModule } from 'primeng/table';
 import { PaginatorModule } from 'primeng/paginator';
+import { DropdownModule } from 'primeng/dropdown';
 
 @NgModule({
   declarations: [],
@@ -23,7 +24,8 @@ import { PaginatorModule } from 'primeng/paginator';
     CardModule,
     InputTextModule,
     TableModule,
-    PaginatorModule
+    PaginatorModule,
+    DropdownModule
   ],
 })
 export class PrimeModule { }

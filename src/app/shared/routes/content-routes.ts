@@ -20,4 +20,11 @@ export const contentRoute: Routes = [
         (m) => m.MasterModule
       ),
   },
+  {
+    path: 'products',
+    loadChildren: () =>
+      import('../../components/products/products.module').then(
+        (m) => m.ProductsModule
+      )
+  },
 ];

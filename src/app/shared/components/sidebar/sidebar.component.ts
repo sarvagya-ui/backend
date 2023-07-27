@@ -28,6 +28,21 @@ export class SidebarComponent implements OnInit {
       },
       {
         label: 'Products',
+        items: [
+          {
+            label: 'Physical',
+            items: [
+              {
+                label: 'Add product',
+                routerLink: ['products/physical/add-product']
+              },
+              {
+                label: 'product-list',
+                routerLink: ['products/physical/product-list']
+              }
+            ]
+          }
+        ]
       },
       {
         label: 'Sales',
@@ -59,6 +74,16 @@ export class SidebarComponent implements OnInit {
       },
       {
         label: 'User',
+        items: [
+          {
+            label: 'Create User',
+            routerLink: ['/users/create-user'],
+          },
+          {
+            label: 'List User',
+            routerLink: ['/users/list-user'],
+          },
+        ]
       },
       {
         label: 'Reports',
